@@ -303,7 +303,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 							<tbody>
 								<!--<tr><td>No tracks found.</td></tr>-->
 							   <?php
-								$rowperpage = 5;
+								$rowperpage = 3;
 								$sql_hw = "SELECT track_title,id FROM tracks WHERE id NOT IN(SELECT track_id FROM page_tracks WHERE page_id = '$page_id' AND shop_id = '$shop_id') order by id desc";
 								$query1 = mysqli_query($db,$sql_hw);
 								$allcount_result = mysqli_query($db,$query1);
@@ -436,7 +436,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			$('.load-more').click(function(){
 				var row = Number($('#row').val());
 				var allcount = Number($('#all').val());
-				row = row + 8;
+				row = row + 3;
 
 				if(row <= allcount){
 					$("#row").val(row);
@@ -455,7 +455,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 								// appending posts after last post with class="post"
 								$(".post:last").after(response).show().fadeIn("slow");
 
-								var rowno = row + 8;
+								var rowno = row + 3;
 
 								// checking row value is greater than allcount or not
 								if(rowno > allcount){
@@ -478,7 +478,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 					setTimeout(function() {
 
 						// When row is greater than allcount then remove all class='post' element after 3 element
-						$('.post:nth-child(8)').nextAll('.post').remove().fadeIn("slow");
+						$('.post:nth-child(3)').nextAll('.post').remove().fadeIn("slow");
 
 						// Reset the value of row
 						$("#row").val(0);

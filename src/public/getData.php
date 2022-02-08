@@ -4,7 +4,7 @@
 require_once 'config.php';
 
 $row = $_POST['row'];
-$rowperpage = 8;
+$rowperpage = 6;
 
 // selecting posts
 $query = 'SELECT * FROM tracks limit $rowperpage';
