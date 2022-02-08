@@ -12,13 +12,24 @@ while($row = mysqli_fetch_array($result)){
     $id = $row['id'];
     $title = $row['track_title'];
 
-    // Creating HTML structure
-    $html .= '<div id="post_'.$id.'" class="post">';
-    $html .= '<h1>'.$title.'</h1>';
-    $html .= '</div>';
-
+    
 }
+?>
 
-echo $html;
 
+<tr class="post track_row_<?php echo $id;?>" data-id="<?php echo $id;?>" id="post_<?php echo $id; ?>">
+	<td>
+		<img class="" src="">
+		<?php echo $title; ?>
+	</td>
+	<td class="action_td">
+		<a class="delete_track" href="javascript:void(0);" data-id="<?php echo $id; ?>"> 
+			<i class="fa fa-trash trash_a_track"></i>
+		</a>
+	</td>
+</tr>
+
+
+<?php 
+}
 ?>
