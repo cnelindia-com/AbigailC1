@@ -166,7 +166,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			z-index: 20;
 		}
 		
-			/* Load more data */
+			/* Load more data	 */
 
 			.container{
 				width: 55%;
