@@ -165,6 +165,49 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			height: 100%;
 			z-index: 20;
 		}
+		
+		
+		
+		
+		/* post */
+		.post{
+			width: 97%;
+			min-height: 200px;
+			padding: 5px;
+			border: 1px solid gray;
+			margin-bottom: 15px;
+		}
+
+		.post h1{
+			letter-spacing: 1px;
+			font-weight: normal;
+			font-family: sans-serif;
+		}
+
+
+		/* Load more */
+		.load-more{
+			width: 99%;
+			background: #15a9ce;
+			text-align: center;
+			color: white;
+			padding: 10px 0px;
+			font-family: sans-serif;
+		}
+
+		.load-more:hover{
+			cursor: pointer;
+		}
+
+		/* more link */
+		.more{
+			color: blue;
+			text-decoration: none;
+			letter-spacing: 1px;
+			font-size: 16px;
+		}
+		
+		
 		</style>
 </head>
 	<body>
@@ -263,15 +306,18 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 							<tbody>
 								<!--<tr><td>No tracks found.</td></tr>-->
 							   <?php
+								$rowperpage = 3;
 								$sql_hw = "SELECT track_title,id FROM tracks WHERE id NOT IN(SELECT track_id FROM page_tracks WHERE page_id = '$page_id' AND shop_id = '$shop_id') order by id desc";
 								$query1 = mysqli_query($db,$sql_hw);
+								$allcount_result = mysqli_query($db,$query1);
+								$allcount = $allcount_fetch['allcount'];
 								while($result=mysqli_fetch_assoc($query1))
 								{
 									$id = $result['id'];
 									$track_title = $result['track_title'];
 									
 									?>
-									<tr class="track_row_<?php echo $id;?>" data-id="<?php echo $id;?>">
+									<tr class="post track_row_<?php echo $id;?>" data-id="<?php echo $id;?>" id="post_<?php echo $id;?>">
 										<td>
 											<img class="" src="">
 											<?php echo $track_title; ?>
@@ -285,7 +331,11 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 									<?php
 								}
 							   ?>
-							   
+									<h1 class="load-more">Load More</h1>
+									<input type="hidden" id="row" value="0">
+									<input type="hidden" id="all" value="<?php echo $allcount; ?>">
+												   
+							    
 							</tbody>
 					   </table>
 					</div>
@@ -377,6 +427,73 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 					 }
 				});
 			});
+			
+			
+			
+			    // Load more data
+			$('.load-more').click(function(){
+				var row = Number($('#row').val());
+				var allcount = Number($('#all').val());
+				row = row + 3;
+
+				if(row <= allcount){
+					$("#row").val(row);
+
+					$.ajax({
+						url: 'getData.php',
+						type: 'post',
+						data: {row:row},
+						beforeSend:function(){
+							$(".load-more").text("Loading...");
+						},
+						success: function(response){
+
+							// Setting little delay while displaying new content
+							setTimeout(function() {
+								// appending posts after last post with class="post"
+								$(".post:last").after(response).show().fadeIn("slow");
+
+								var rowno = row + 3;
+
+								// checking row value is greater than allcount or not
+								if(rowno > allcount){
+
+									// Change the text and background
+									$('.load-more').text("Hide");
+									$('.load-more').css("background","darkorchid");
+								}else{
+									$(".load-more").text("Load more");
+								}
+							}, 2000);
+
+
+						}
+					});
+				}else{
+					$('.load-more').text("Loading...");
+
+					// Setting little delay while removing contents
+					setTimeout(function() {
+
+						// When row is greater than allcount then remove all class='post' element after 3 element
+						$('.post:nth-child(3)').nextAll('.post').remove().fadeIn("slow");
+
+						// Reset the value of row
+						$("#row").val(0);
+
+						// Change the text and background
+						$('.load-more').text("Load more");
+						$('.load-more').css("background","#15a9ce");
+
+					}, 2000);
+
+
+				}
+
+			});
+			
+			
+			
 		});
 		</script>
                 
