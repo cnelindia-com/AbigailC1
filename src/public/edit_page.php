@@ -335,11 +335,12 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 							    
 							</tbody>
 							
-									<h1 class="load-more">Load More</h1>
-									<input type="hidden" id="row" value="0">
-									<input type="hidden" id="all" value="<?php echo $allcount; ?>">
+									
 							
 					   </table>
+					   <h1 class="load-more">Load More</h1>
+						<input type="hidden" id="row" value="0">
+						<input type="hidden" id="all" value="<?php echo $allcount; ?>">
 					</div>
 				 </div>
 			  </div>
