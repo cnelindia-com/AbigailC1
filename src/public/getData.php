@@ -7,10 +7,9 @@ $row = $_POST['row'];
 $rowperpage = 8;
 
 // selecting posts
-$query = 'SELECT * FROM tracks limit '.$row.','.$rowperpage;
+$query = 'SELECT * FROM tracks limit $rowperpage';
 $result = mysqli_query($db,$query);
 
-$html = '';
 
 while($result=mysqli_fetch_assoc($query))
 {
