@@ -436,7 +436,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			$('.load-more').click(function(){
 				var row = Number($('#row').val());
 				var allcount = Number($('#all').val());
-				row = row + 5;
+				row = row + 8;
 
 				if(row <= allcount){
 					$("#row").val(row);
@@ -455,7 +455,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 								// appending posts after last post with class="post"
 								$(".post:last").after(response).show().fadeIn("slow");
 
-								var rowno = row + 5;
+								var rowno = row + 8;
 
 								// checking row value is greater than allcount or not
 								if(rowno > allcount){
@@ -478,7 +478,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 					setTimeout(function() {
 
 						// When row is greater than allcount then remove all class='post' element after 3 element
-						$('.post:nth-child(5)').nextAll('.post').remove().fadeIn("slow");
+						$('.post:nth-child(8)').nextAll('.post').remove().fadeIn("slow");
 
 						// Reset the value of row
 						$("#row").val(0);
