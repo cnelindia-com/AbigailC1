@@ -16,10 +16,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 	$nonce = $shop_row['nonce'];
 	$access_token = $shop_row['access_token'];
 
-//	$validHmac = validateHmac($params, $secret);
-//	$validShop = validateShopDomain($params['shop']);
-//	$shop = $params['shop'];
-//if ($validHmac && $validShop) {
+ 
 	
 
 ?>
@@ -481,7 +478,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 					setTimeout(function() {
 
 						// When row is greater than allcount then remove all class='post' element after 3 element
-						$('.post:nth-child(3)').nextAll('.post').remove().fadeIn("slow");
+						$('.post:nth-child(5)').nextAll('.post').remove().fadeIn("slow");
 
 						// Reset the value of row
 						$("#row").val(0);
