@@ -1,0 +1,44 @@
+.hwedesignblinkbutton {
+	background: linear-gradient(180deg, #5c6ac4, #4959bd);
+	border-color: #3f4eae;
+	text-decoration: none;
+	color: #fff !important;
+	fill: #fff;
+}
+
+.fiveld_button_header_container {
+	display: inline-block;
+	width: 100%;
+	padding: 15px 0;
+	margin-bottom: 8px;
+	border-bottom: 1px solid #ccc;
+}
+
+.fiveld_button_header_left_inner_container {
+	float: left;
+	display:none;
+}
+
+.fiveld_button_header_right_inner_container {
+	float: right;
+	padding-right: 60px;
+}
+
+.hwe_design_anchor {
+	border-radius: 3px;
+	border: 1px solid #5766c2;
+	padding: 7px 15px;
+}
+
+.ui-menu .ui-menu-item {
+	text-align:left;
+}
+
+.ui-menu.ui-widget.ui-widget-content{
+	width:770px  !important;
+}
+
+.hwe_green_button {
+	background: #48b227;
+	border: 1px solid;
+}

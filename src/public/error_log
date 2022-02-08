@@ -1,0 +1,8 @@
+[07-Feb-2022 15:36:35 Asia/Kolkata] PHP Warning:  unlink(upload_tracks/): Is a directory in /home3/ccrdskmy/public_html/ready/AbigailC1/src/public/remove_track.php on line 22
+[07-Feb-2022 15:37:04 Asia/Kolkata] PHP Warning:  unlink(upload_tracks/): Is a directory in /home3/ccrdskmy/public_html/ready/AbigailC1/src/public/remove_track.php on line 22
+[07-Feb-2022 15:39:17 Asia/Kolkata] PHP Warning:  unlink(upload_tracks/): Is a directory in /home3/ccrdskmy/public_html/ready/AbigailC1/src/public/remove_track.php on line 22
+[07-Feb-2022 15:39:21 Asia/Kolkata] PHP Warning:  unlink(upload_tracks/): Is a directory in /home3/ccrdskmy/public_html/ready/AbigailC1/src/public/remove_track.php on line 22
+[07-Feb-2022 15:39:33 Asia/Kolkata] PHP Warning:  unlink(upload_tracks/): Is a directory in /home3/ccrdskmy/public_html/ready/AbigailC1/src/public/remove_track.php on line 22
+[07-Feb-2022 18:15:03 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home3/ccrdskmy/public_html/ready/AbigailC1/src/public/cron-sync-pages.php on line 46
+[07-Feb-2022 18:15:03 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home3/ccrdskmy/public_html/ready/AbigailC1/src/public/cron-sync-pages.php on line 46
+[07-Feb-2022 18:15:03 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home3/ccrdskmy/public_html/ready/AbigailC1/src/public/cron-sync-pages.php on line 46
