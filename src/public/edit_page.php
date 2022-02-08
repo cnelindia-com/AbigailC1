@@ -165,6 +165,41 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			height: 100%;
 			z-index: 20;
 		}
+		
+		
+
+		/* post */
+		.post{
+			width: 97%;
+			min-height: 200px;
+			padding: 5px;
+			border: 1px solid gray;
+			margin-bottom: 15px;
+		}
+
+		.post h1{
+			letter-spacing: 1px;
+			font-weight: normal;
+			font-family: sans-serif;
+		}
+
+
+		.post p{
+			letter-spacing: 1px;
+			text-overflow: ellipsis;
+			line-height: 25px;
+		}
+
+		/* Load more */
+		.load-more{
+			width: 99%;
+			background: #15a9ce;
+			text-align: center;
+			color: white;
+			padding: 10px 0px;
+			font-family: sans-serif;
+		}
+
 		</style>
 </head>
 	<body>
