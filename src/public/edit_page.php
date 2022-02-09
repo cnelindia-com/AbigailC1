@@ -166,15 +166,6 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			z-index: 20;
 		}
 		
-			/* Load more data	 */
-
-			.container{
-				width: 55%;
-				margin: 0 auto;
-				border: 0px solid black;
-				padding: 10px 0px;
-			}
-
 			
 			.post{
 				width: 97%;
