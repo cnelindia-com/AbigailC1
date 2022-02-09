@@ -340,8 +340,8 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			
 					   </table>
 					   <h1 class="load-more">Load More</h1>
-						<input type="hidden" id="tracks_row" value="0">
-						<input type="hidden" id="tracks_all_rows" value="<?php echo $tracks_allcount; ?>">
+						<input type="hidden" id="row" value="0">
+						<input type="hidden" id="all" value="<?php echo $allcount; ?>">
 					</div>
 				 </div>
 			  </div>
@@ -433,17 +433,17 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			});
 			// Load more data
 				$('.load-more').click(function(){
-					var tracks_row = Number($('#tracks_row').val());
-					var tracks_allcount = Number($('#tracks_all_rows').val());
-					tracks_row = tracks_row + 3;
+					var row = Number($('#row').val());
+					var allcount = Number($('#all').val());
+					row = row + 3;
 
-					if(tracks_row <= tracks_allcount){
-						$("#tracks_row").val(tracks_row);
+					if(row <= allcount){
+						$("#row").val(row);
 
 						$.ajax({
 							url: 'load_more_track.php',
 							type: 'post',
-							data: {tracks_row:tracks_row},
+							data: {row:row},
 							beforeSend:function(){
 								$(".load-more").text("Loading...");
 							},
@@ -454,10 +454,10 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 									// appending posts after last post with class="post"
 									$(".post:last").after(response).show().fadeIn("slow");
 
-									var tracks_rowno = tracks_row + 3;
+									var rowno = row + 3;
 
 									// checking row value is greater than allcount or not
-									if(tracks_rowno > tracks_allcount){
+									if(rowno > allcount){
 
 										// Change the text and background
 										$('.load-more').text("Hide");
@@ -480,7 +480,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 							$('.post:nth-child(3)').nextAll('.post').remove().fadeIn("slow");
 
 							// Reset the value of row
-							$("#tracks_row").val(0);
+							$("#row").val(0);
 
 							// Change the text and background
 							$('.load-more').text("Load more");
