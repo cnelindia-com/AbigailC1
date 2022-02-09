@@ -341,7 +341,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 					   </table>
 					   <h1 class="load-more">Load More</h1>
 						<input type="hidden" id="tracks_row" value="0">
-						<input type="hidden" id="tracks_all_rows" value="<?php echo $allcount; ?>">
+						<input type="hidden" id="tracks_all_rows" value="<?php echo $tracks_allcount; ?>">
 					</div>
 				 </div>
 			  </div>
