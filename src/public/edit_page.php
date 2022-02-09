@@ -341,7 +341,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 					   </table>
 					   <h1 class="load-more">Load More</h1>
 						<input type="hidden" id="tracks_row" value="0">
-						<input type="hidden" id="all" value="<?php echo $allcount; ?>">
+						<input type="hidden" id="tracks_all_rows" value="<?php echo $allcount; ?>">
 					</div>
 				 </div>
 			  </div>
@@ -434,7 +434,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			// Load more data
 				$('.load-more').click(function(){
 					var tracks_row = Number($('#tracks_row').val());
-					var allcount = Number($('#all').val());
+					var allcount = Number($('#tracks_all_rows').val());
 					tracks_row = tracks_row + 3;
 
 					if(tracks_row <= allcount){
