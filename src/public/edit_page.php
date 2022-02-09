@@ -309,11 +309,13 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 								
 								$query1 = mysqli_query($db,$sql_hw);
 								
-								$allcount_query = "SELECT track_title,id FROM tracks WHERE id NOT IN(SELECT track_id FROM page_tracks WHERE page_id = '$page_id' AND shop_id = '$shop_id') order by id desc";
+								$allcount_query = "SELECT count(*) as allcount FROM tracks WHERE id NOT IN(SELECT track_id FROM page_tracks WHERE page_id = '$page_id' AND shop_id = '$shop_id') order by id desc";
 								$allcount_result = mysqli_query($db,$allcount_query);
 								$allcount_fetch = mysqli_fetch_array($allcount_result);
 								$allcount = $allcount_fetch['allcount'];
 								
+								
+								"SELECT count(*) as allcount FROM posts";
 								
 								while($result=mysqli_fetch_assoc($query1))
 								{
