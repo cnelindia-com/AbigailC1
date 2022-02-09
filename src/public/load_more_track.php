@@ -1,10 +1,10 @@
 <?php 
 require_once 'config.php';
 $rowperpage = 10;
-$row = $_POST['row'];
+$tracks_row = $_POST['tracks_row'];
 
 // selecting posts
-$query = 'SELECT * FROM tracks limit '.$row.','.$rowperpage;
+$query = 'SELECT * FROM tracks limit '.$tracks_row.','.$rowperpage;
 $result = mysqli_query($db,$query);
 
 

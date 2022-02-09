@@ -168,7 +168,17 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			height: 100%;
 			z-index: 20;
 		}
-		
+		.load-more {
+		  border: 1px solid #007bff;
+		  width: 15%;
+		  font-size: 22px;
+		  text-align: center;
+		  color: white;
+		  background-color: #007bff;
+		  margin: 18px auto;
+		  padding: 5px;
+		  cursor: pointer;
+		}
 
 
 			
