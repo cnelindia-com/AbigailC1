@@ -434,10 +434,10 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			// Load more data
 				$('.load-more').click(function(){
 					var tracks_row = Number($('#tracks_row').val());
-					var allcount = Number($('#tracks_all_rows').val());
+					var tracks_allcount = Number($('#tracks_all_rows').val());
 					tracks_row = tracks_row + 3;
 
-					if(tracks_row <= allcount){
+					if(tracks_row <= tracks_allcount){
 						$("#tracks_row").val(tracks_row);
 
 						$.ajax({
@@ -457,7 +457,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 									var tracks_rowno = tracks_row + 3;
 
 									// checking row value is greater than allcount or not
-									if(tracks_rowno > allcount){
+									if(tracks_rowno > tracks_allcount){
 
 										// Change the text and background
 										$('.load-more').text("Hide");
