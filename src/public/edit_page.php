@@ -430,10 +430,10 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 									// appending posts after last post with class="post"
 									$(".post:last").after(response).show().fadeIn("slow");
 
-									var tracks_rowno = tracks_rows + 3;
+									var rowno = tracks_rows + 3;
 
 									// checking row value is greater than allcount or not
-									if(tracks_rowno > allcount){
+									if(rowno > allcount){
 
 										// Change the text and background
 										$('.load-more').text("Hide");
