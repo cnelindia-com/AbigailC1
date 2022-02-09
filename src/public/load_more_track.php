@@ -13,7 +13,6 @@ while($row = mysqli_fetch_array($result)){
     $title = $row['track_title'];
 
     
-}
 ?>
 
 
