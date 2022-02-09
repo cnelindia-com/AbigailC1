@@ -305,7 +305,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 								<!--<tr><td>No tracks found.</td></tr>-->
 							   <?php
 								$rowperpage = 5;
-								$sql_hw = "SELECT track_title,id FROM tracks WHERE id NOT IN(SELECT track_id FROM page_tracks WHERE page_id = '$page_id' AND shop_id = '$shop_id') order by id desc limit 0,$rowperpage";
+								$sql_hw = "SELECT track_title,id FROM tracks WHERE id NOT IN(SELECT track_id FROM page_tracks WHERE page_id = '$page_id' AND shop_id = '$shop_id') order by id desc limit $rowperpage";
 								$query1 = mysqli_query($db,$sql_hw);
 								$allcount_fetch = mysqli_fetch_array($query1);
 								$allcount = $allcount_fetch['allcount'];
