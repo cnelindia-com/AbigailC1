@@ -202,14 +202,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 				cursor: pointer;
 			}
 
-			/* more link */
-			.more{
-				color: blue;
-				text-decoration: none;
-				letter-spacing: 1px;
-				font-size: 16px;
-			}
-
+			
 		</style>
 </head>
 	<body>
