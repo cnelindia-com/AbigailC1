@@ -178,6 +178,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 		  background-color: #007bff;
 		  margin: 18px auto;
 		  padding: 5px;
+		  cursor: pointer;
 		}
 
 			
