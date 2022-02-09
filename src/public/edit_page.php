@@ -169,17 +169,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			z-index: 20;
 		}
 		
-		.load-more {
-		  border: 1px solid #007bff;
-		  width: 15%;
-		  font-size: 22px;
-		  text-align: center;
-		  color: white;
-		  background-color: #007bff;
-		  margin: 18px auto;
-		  padding: 5px;
-		  cursor: pointer;
-		}
+
 
 			
 		</style>
@@ -409,17 +399,17 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			});
 			// Load more data
 				$('.load-more').click(function(){
-					var tracks_rows = Number($('#tracks_row').val());
+					var row = Number($('#tracks_row').val());
 					var allcount = Number($('#all_tracks').val());
-					tracks_rows = tracks_rows + 3;
+					row = row + 3;
 
-					if(tracks_rows <= allcount){
-						$("#tracks_row").val(tracks_rows);
+					if(row <= allcount){
+						$("#tracks_row").val(row);
 
 						$.ajax({
 							url: 'load_more_track.php',
 							type: 'post',
-							data: {tracks_rows:tracks_rows},
+							data: {row:row},
 							beforeSend:function(){
 								$(".load-more").text("Loading...");
 							},
@@ -430,7 +420,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 									// appending posts after last post with class="post"
 									$(".post:last").after(response).show().fadeIn("slow");
 
-									var rowno = tracks_rows + 3;
+									var rowno = row + 3;
 
 									// checking row value is greater than allcount or not
 									if(rowno > allcount){
