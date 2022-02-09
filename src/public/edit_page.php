@@ -176,7 +176,8 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 		  text-align: center;
 		  color: white;
 		  background-color: #007bff;
-		  margin: auto;
+		  margin: 18px auto;
+		  padding: 5px;
 		}
 
 			
