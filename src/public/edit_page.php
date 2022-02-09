@@ -309,10 +309,10 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 								
 								$query1 = mysqli_query($db,$sql_hw);
 								
-								$allcount_query = "SELECT count(*) as allcount FROM tracks WHERE id NOT IN(SELECT track_id FROM page_tracks WHERE page_id = '$page_id' AND shop_id = '$shop_id') order by id desc";
-								$allcount_result = mysqli_query($db,$allcount_query);
-								$allcount_fetch = mysqli_fetch_array($allcount_result);
-								$allcount = $allcount_fetch['allcount'];
+								$tracks_allcount_query = "SELECT count(*) as allcount FROM tracks WHERE id NOT IN(SELECT track_id FROM page_tracks WHERE page_id = '$page_id' AND shop_id = '$shop_id') order by id desc";
+								$tracks_allcount_result = mysqli_query($db,$allcount_query);
+								$tracks_allcount_fetch = mysqli_fetch_array($allcount_result);
+								$tracks_allcount = $tracks_allcount_fetch['allcount'];
 								
 								
 								while($result=mysqli_fetch_assoc($query1))
@@ -340,7 +340,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			
 					   </table>
 					   <h1 class="load-more">Load More</h1>
-						<input type="hidden" id="row" value="0">
+						<input type="hidden" id="tracks_row" value="0">
 						<input type="hidden" id="all" value="<?php echo $allcount; ?>">
 					</div>
 				 </div>
@@ -433,17 +433,17 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			});
 			// Load more data
 				$('.load-more').click(function(){
-					var row = Number($('#row').val());
+					var tracks_row = Number($('#tracks_row').val());
 					var allcount = Number($('#all').val());
-					row = row + 3;
+					tracks_row = tracks_row + 3;
 
-					if(row <= allcount){
-						$("#row").val(row);
+					if(tracks_row <= allcount){
+						$("#tracks_row").val(tracks_row);
 
 						$.ajax({
 							url: 'load_more_track.php',
 							type: 'post',
-							data: {row:row},
+							data: {tracks_row:tracks_row},
 							beforeSend:function(){
 								$(".load-more").text("Loading...");
 							},
@@ -454,10 +454,10 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 									// appending posts after last post with class="post"
 									$(".post:last").after(response).show().fadeIn("slow");
 
-									var rowno = row + 3;
+									var tracks_rowno = tracks_row + 3;
 
 									// checking row value is greater than allcount or not
-									if(rowno > allcount){
+									if(tracks_rowno > allcount){
 
 										// Change the text and background
 										$('.load-more').text("Hide");
@@ -480,7 +480,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 							$('.post:nth-child(3)').nextAll('.post').remove().fadeIn("slow");
 
 							// Reset the value of row
-							$("#row").val(0);
+							$("#tracks_row").val(0);
 
 							// Change the text and background
 							$('.load-more').text("Load more");
