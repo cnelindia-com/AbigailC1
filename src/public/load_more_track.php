@@ -7,7 +7,7 @@ $row = $_POST['row'];
 $query = 'SELECT * FROM tracks limit '.$row.','.$rowperpage;
 $result = mysqli_query($db,$query);
 
-$html = '';
+
 
 while($row = mysqli_fetch_array($result)){
     $id = $row['id'];
