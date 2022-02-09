@@ -315,8 +315,6 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 								$allcount = $allcount_fetch['allcount'];
 								
 								
-								"SELECT count(*) as allcount FROM posts";
-								
 								while($result=mysqli_fetch_assoc($query1))
 								{
 									$id = $result['id'];
