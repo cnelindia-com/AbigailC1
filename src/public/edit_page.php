@@ -306,8 +306,8 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			
 					   </table>
 					   <h1 class="load-more">Load More</h1>
-						<input type="hidden" id="row" value="0">
-						<input type="hidden" id="all" value="<?php echo $tracks_allcount; ?>">
+						<input type="hidden" id="tracks_row" value="0">
+						<input type="hidden" id="all_tracks" value="<?php echo $tracks_allcount; ?>">
 					</div>
 				 </div>
 			  </div>
@@ -399,12 +399,12 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 			});
 			// Load more data
 				$('.load-more').click(function(){
-					var row = Number($('#row').val());
-					var allcount = Number($('#all').val());
+					var row = Number($('#tracks_row').val());
+					var allcount = Number($('#all_tracks').val());
 					row = row + 3;
 
 					if(row <= allcount){
-						$("#row").val(row);
+						$("#tracks_row").val(row);
 
 						$.ajax({
 							url: 'load_more_track.php',
@@ -446,7 +446,7 @@ if(isset($_GET['shop'])&&isset($_GET['page-id'])){
 							$('.post:nth-child(3)').nextAll('.post').remove().fadeIn("slow");
 
 							// Reset the value of row
-							$("#row").val(0);
+							$("#tracks_row").val(0);
 
 							// Change the text and background
 							$('.load-more').text("Load more");
