@@ -1,6 +1,6 @@
 <?php 
 require_once 'config.php';
-$rowperpage = 3;
+$rowperpage = 10;
 $row = $_POST['row'];
 
 // selecting posts
